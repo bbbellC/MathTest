@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/test/test",
+    "pages/result/result",
+    "pages/situation/situation",
+    "pages/situations/situations",
+    "pages/wrongs/wrongs",
+    "pages/exercise/exercise",
+    "pages/rank/rank",
+    "pages/me/me",
+    "pages/my/my",
+    "pages/feedback/feedback",
+    "pages/developer/developer"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#61bfad",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"white"
+  
+  },
+  "tabBar": {
+    "color": "#32635A",
+    "selectedColor": "#32635A",
+    "backgroundColor": "#F9F7E8",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "images/avatar/home0.png",
+        "selectedIconPath": "images/avatar/home.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人",
+        "iconPath": "images/avatar/me0.png",
+        "selectedIconPath": "images/avatar/me.png"
+      }
+    ]
+  } 
+}

@@ -1,0 +1,43 @@
+<!--pages/result/result.wxml-->
+<view class="wrapper">
+  <view class='wrapper-up shadow-warp'>
+    <text>{{grade}}年级  {{term}}学期</text>
+    <view class='line'></view>
+
+    <view class="grid-text-wrapper">
+      <view class="grid-text">题目</view>
+      <view class="grid-text">用时</view>
+      <view class="grid-text">得分</view>
+      <view class="grid-text">正确率</view>
+      <view class="grid-text">{{questionNum}}道</view>
+      <view class="grid-text">{{time}}</view>
+      <view class="grid-text">{{score}}</view>
+      <view class="grid-text">{{percent+"%"}}</view>
+    </view> 
+ 
+  </view>
+  <view class='wrapper-down'>
+    <view  class='question-wrapper'>
+      <view wx:for="{{question}}">
+        <view class='question-container' bindtap='goToQuestion' data-index="{{item['pid']}}"  hover-class='question-hover'>
+          <view class='question-id'><text>{{item['pid']}}</text></view>
+          <view class='circle-container' >
+            <view class='circle circle1' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+            <view class='circle circle2' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+            <view class='circle circle3' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+            <view class='circle circle4' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+            <view class='circle circle5' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+            <view class='circle circle6' style="background:{{item['pickFlag'] == true? '#6ecfbe' : '#f193a7'}}"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='tabbar'>
+    <view class='tabbar-item' hover-class='tabbar-hover' bindtap='goToHome'><image src='/images/avatar/back.png'></image>{{flag == true ? '返回上页' : '返回首页'}}</view>
+    <view class='tabbar-line'>|</view>
+    <view class='tabbar-item' hover-class='tabbar-hover' bindtap='goToAllQuestion'><image src='/images/avatar/all.png'></image>全题回顾</view>
+  </view>
+  
+</view>

@@ -1,0 +1,128 @@
+/* pages/wrongs/wrongs.wxss */
+.wrapper-up {
+  height: 20%;
+  margin-bottom:5%;
+  background-color: white;
+}
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50%;
+}
+.text-wrapper {
+  height: 50%;
+  font-size: 35rpx;
+  text-align: center;
+}
+.wrapper-down {
+  height: 77%;
+  /* margin-bottom:50rpx;
+  margin-top:50rpx;
+  margin-left:30rpx;
+  margin-right:30rpx; */
+  border-radius:20rpx;
+  overflow:hidden;
+  display:block;
+  box-shadow:0rpx 40rpx 100rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+
+
+.btn {
+  height: 50%;
+  margin: 0 3%;
+  flex: 1;
+  color: #52A092;
+  border: 1px solid #52A092;
+  border-radius: 5rpx;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 5rpx 5rpx 50rpx #7AC8BA; */
+  box-shadow: 0rpx 0rpx 50rpx rgba(249, 247, 232, 0.3);
+}
+.btn-hover {
+  background: rgba(223, 237, 220, 0.5);
+}
+.text {
+  flex: 1;
+  text-align: center;
+}
+
+.question-wrapper0 {
+  display: flex;
+  flex-direction: column;
+} 
+
+
+.question-item {
+  transform:translateX(0rpx);
+  transition:all 0.6s ease-in-out 0s;
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff;
+  padding:30rpx 30rpx;
+}
+.question-item::after {
+  content: " ";
+  width: 180%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  border-radius: inherit;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* .question-item:last-child::after {
+  border: none;
+} */
+
+.question-content {
+  width: 90%;
+  padding-right: 5%;
+  /* overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap; */
+  font-size: 40rpx;
+}
+.right-arrow {
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.question-option, .picture {
+  margin:5% 5%;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-15%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes slide-top-disappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15%)
+  }
+}

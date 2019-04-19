@@ -1,0 +1,51 @@
+<!--pages/home/home.wxml-->
+<view class='wrapper'>
+  <view class='home-user' wx:if="{{hasUserInfo}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <text>你好！{{userInfo.nickName}}。</text>
+  </view>
+  <view class='home-user' wx:else>
+    <image src='/images/avatar/avatar.png'></image>
+    <text>你好！尊敬的用户。</text>
+  </view>
+
+  <view class='btn-text'>
+    当前选择测试的题目范畴：
+    <text>\n</text>
+    {{termArray[0][termIndex[0]]}}{{termArray[1][termIndex[1]]}}
+    <text>\n</text>
+    章：{{chapterArray[0][chapterIndex[0]].label}}
+    <text>\n</text>
+    节：{{chapterArray[1][chapterIndex[1]].label}}
+  </view>
+
+  <view class='btn' hover-class='btn-hover' catchtap='goToTest'>开始测试</view>
+
+  <view class='btn'>
+    <picker mode='multiSelector' bindchange='termChange'  value='{{termIndex}}' range='{{termArray}}' >选择学期</picker>
+  </view> 
+
+  <view class='btn'>
+    <picker mode='multiSelector' bindchange='chapterChange' bindcolumnchange='partChange' value='{{chapterIndex}}' range='{{chapterArray}}' range-key="label">选择章节</picker>
+  </view>
+
+  <view class="home-login" hidden="{{myflag}}">
+    <view class="login-yangshi">
+      <view class='login-namesq'>
+        <text>授权数学章节测试</text>
+      </view>
+      <view class='login-icon'>
+          <image src='/images/avatar/icon.png'></image>
+      </view>
+      <view class='login-content1'>
+          <text>需要微信授权后使用</text>
+      </view>
+
+      <view class='login-content2'>
+          <text>和同学一起进入数学章节测试练习</text>
+      </view>
+      <button class='login-bottom' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" bindtap="closeMask">前往授权</button>
+    </view>
+  </view>
+
+</view>

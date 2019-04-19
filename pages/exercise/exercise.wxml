@@ -1,0 +1,38 @@
+<!--pages/exercise/exercise.wxml-->
+<!--练习记录-->
+<view class="container">
+  <view class="widget">
+    <text class="column">日期</text>
+    <text class="column">范围</text>
+    <text class="column">题数</text>
+    <text class="column">用时</text>
+    <text class="column">正确率</text>
+  </view>
+  <scroll-view scroll-y="true">
+    <view> 
+      <block wx:for="{{list}}">
+        <view class="widget" bindtap="toggleResult" data-question-num="{{item.questionNum}}" data-answer-use-time="{{item.answerUseTime}}" data-correct-rate="{{item.correctRate}}" data-answer-id="{{item.answerId}}" data-chapter-grade="{{item.chapterGrade}}" data-chapter-term="{{item.chapterTerm}}">
+          <text class="column">{{item.answerDate}}</text>
+      
+          <text class="column" wx:if="{{item.chapterGrade == 1  && item.chapterTerm == 1}}">一年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 1  && item.chapterTerm == 2}}">一年级下学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 2  && item.chapterTerm == 1}}">二年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 2  && item.chapterTerm == 2}}">二年级下学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 3  && item.chapterTerm == 1}}">三年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 3  && item.chapterTerm == 2}}">三年级下学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 4  && item.chapterTerm == 1}}">四年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 4  && item.chapterTerm == 2}}">四年级下学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 5  && item.chapterTerm == 1}}">五年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 5  && item.chapterTerm == 2}}">五年级下学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 6  && item.chapterTerm == 1}}">六年级上学期</text>
+          <text class="column" wx:if="{{item.chapterGrade == 6  && item.chapterTerm == 2}}">六年级下学期</text>
+
+          <text class="column">{{item.questionNum}}</text>
+          <text class="column">{{item.answerUseTime}}s</text>
+          <text class="column">{{item.correctRate}}%</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  
+</view>

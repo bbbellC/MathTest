@@ -1,0 +1,62 @@
+<!--pages/wrongs/wrongs.wxml-->
+<view class='wrapper'>
+  <view class='wrapper-up shadow-warp'>
+    <view class='btn-wrapper'> 
+      <picker class='btn' mode='multiSelector' bindchange='termChange'  value='{{termIndex}}' range='{{termArray}}' >选择学期</picker>
+      <view class='text'>
+        错题记录
+      </view>
+      <picker class='btn' mode='multiSelector' bindchange='chapterChange' bindcolumnchange='partChange' value='{{chapterIndex}}' range='{{chapterArray}}' range-key="label">选择章节</picker>
+    </view>
+
+    <view class='text-wrapper'>
+      {{termArray[0][termIndex[0]]}}{{termArray[1][termIndex[1]]}}
+      <text>\n</text>
+      {{chapterArray[0][chapterIndex[0]].label}} | 
+      {{chapterArray[1][chapterIndex[1]].label}}
+    </view>
+  </view>
+  
+  <scroll-view
+    class='wrapper-down'
+    scroll-y
+    enable-back-to-top='true' 
+  >
+    <view wx:if="{{question.length > 0 == true}}">
+      <block wx:for="{{question}}" wx:key="key">
+        <view class='question-wrapper0'>
+          <!-- 题目 -->
+          <view class='question-item' bindtap='toggle' id="{{index+1}}">
+            <text wx:if="{{item.isImageQuestion == '0'}}" class='question-content' style="{{index+1==hide ? '' : 'overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'}}">{{item.questionContent}}</text>
+            <text wx:else class='question-content' style="{{index+1==hide ? '' : 'overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'}}">图片题，请点击我查看详情！</text>
+            <image src="{{index+1==hide ? '/images/avatar/down-arrow.png' : '/images/avatar/arrow.png' }}" class='right-arrow'></image>
+          </view>
+
+          <!-- 选项 --> 
+          <view wx:if="{{index == qi}}" class="question-options {{index+1==hide ? '' : 'hidden'}}">
+            <view class='wrapper-up-img' style="{{q['isImageQuestion'] == '0' ? 'display:none' : ''}}">
+              <image style="width:100%;" mode="widthFix" src="{{q['isImageQuestion'] == '0' ? '' : q['questionContent']}}"/>
+            </view>
+
+            <view wx:for="{{options}}" wx:key="key" wx:for-index="i">
+              <!-- 文字题 -->
+              <view wx:if="{{q['isImageQuestion'] == '0'}}">
+                <button class="question-option {{q[options[i]] == q['correctOption'] ? 'correct' : ''}} {{q[options[i]] == q['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}};animation-delay: {{0.03*i}}s;">
+                  <text>({{options[i][6]}})  {{q[options[i]]}}</text>
+                </button>
+              </view>
+              <!-- 图片提 -->
+              <view wx:else> 
+                <view class="picture {{q[options[i]] == q['correctOption'] ? 'correct' : ''}} {{q[options[i]] == q['selectedOption'] ? 'wrong' : ''}}">({{options[i][6]}})<image style='width:{{wide}}rpx;' mode="widthFix" src="{{q[options[i]]}}" bindload='getWidth' ></image></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else style="text-align:center">
+    超棒！您在此章节没有错题哦，加油！
+    </view>
+  </scroll-view>
+
+</view>

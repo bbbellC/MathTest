@@ -1,0 +1,29 @@
+/* pages/feedback/feedback.wxss */
+.container {
+  height: 90%;
+}
+
+.margin-top {
+  height: 85%;
+  width: 90%;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.btn {
+  background-color:#61bfad;
+  color:#fff;
+  margin: 20rpx 30rpx;
+  padding:0 40rpx;
+  font-size:32rpx;
+  height:80rpx;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.save-hover {
+  background-color: #53A393;
+}

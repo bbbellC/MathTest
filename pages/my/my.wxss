@@ -1,0 +1,74 @@
+/* pages/my/my.wxss */
+.title {
+  text-align: center;
+  margin: 20rpx 0;
+}
+.info-wrapper {
+  margin-top:30rpx;
+  background:#fff;
+  padding:1rpx 30rpx;
+  display:flex;
+  align-items:center;
+  min-height:100rpx;
+  justify-content:space-between;
+}
+
+.info-wrapper+.info-wrapper {
+  border-top: 1rpx solid #eee;
+}
+
+.info-wrapper .title {
+  text-align:justify;
+  padding-right:30rpx;
+  font-size:34rpx;
+  position:relative;
+  height:60rpx;
+  line-height:60rpx;
+}
+
+.info-wrapper .content {
+  flex:1;
+  font-size:34rpx;
+  color:#555;
+  padding-right:20rpx;
+  border-radius:6rpx;
+}
+
+.picker-wrapper {
+  flex:1;
+  padding-right:40rpx;
+  overflow:hidden;
+  position:relative;
+
+}
+.picker {
+  line-height:100rpx;
+  font-size:34rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  width:100%;
+  text-align:left;
+}
+
+.warn {
+  font-size: 24rpx;
+  color: red;
+}
+
+.btn {
+  background-color:#61bfad;
+  color:#fff;
+  margin: 20rpx 30rpx;
+  padding:0 40rpx;
+  font-size:32rpx;
+  height:80rpx;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.save-hover {
+  background-color: #53A393;
+}

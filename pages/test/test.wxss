@@ -1,0 +1,203 @@
+/* pages/test/test.wxss */
+
+.wrapper {
+  /* background: linear-gradient(180deg, rgba(217, 168, 123, 0.63), rgba(217, 168, 123, 0.933));
+  color: rgba(217, 168, 123, 0.63);
+  background: linear-gradient(180deg, rgba(246, 199, 106, 0.89), #F6C86A); */
+  background: linear-gradient(180deg, #F9F7E8, rgb(235, 232, 210));
+  background: linear-gradient(180deg, #F9F7E8, rgb(240, 235, 196));
+  /* background: rgba(250, 227, 151, 0.527);
+   */
+   background: #FFFDE7;
+   background: linear-gradient(180deg, #F9F7E8, #FFFDE7);
+   
+}
+
+/* 进度条数字 */
+.bar-num {
+  font-size:35rpx;
+  color:#fff;
+  margin:0 8rpx;
+}
+
+/* 上框 */
+.wrapper-up {
+  height: 30%;
+  /* background-color: #6180ac; */
+  background-color:#61bfad;
+  /* background-color: #CBA0AA; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 12rpx;
+  margin: 4% 4%;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 8rpx 8rpx 20rpx rgba(97, 191, 174, 0.486);
+  /* box-shadow: 8rpx 8rpx 20rpx rgba(203, 160, 170, 0.603); */
+  
+}
+.wrapper-up-img {
+  /* height: 20%; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  border-radius: 12rpx;
+  /* margin: 4% 4%; */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 8rpx 8rpx 20rpx rgba(97, 191, 174, 0.486);
+}
+
+/* 图片 */
+/* .picture{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  color: #454545;
+  margin: 5% 5%;
+  box-shadow: 0rpx 2rpx 1rpx #92ada8;
+  animation-duration:0.1s;
+  animation-timing-function:ease-in;
+  animation-fill-mode:both;
+} */
+
+
+/* 题目 */
+/* .question-title {
+
+  color: #454545;
+  margin:0 3%;
+  font-size: 45rpx;
+} */
+
+/* 倒计时 */
+.countdown {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding: 15rpx 20rpx;
+  font-size: 35rpx;
+}
+.countdown-img {
+  margin-right: 2rpx;
+  padding: 15rpx 20rpx;
+  font-size: 35rpx;
+  /* display: inline; */
+  float: right;
+}
+
+.countdown image, .countdown-img image {
+  height: 42rpx;
+  width: 42rpx;
+  margin-right: 10rpx;
+}
+
+/* 下框 */
+.wrapper-down {
+  height: 71%;
+  /* margin-top:5%; */
+  border-radius:20rpx;
+  overflow:hidden;
+  display:block;
+  box-shadow:0rpx 40rpx 100rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+
+/* 答案选项 */
+/* .question-option {
+  font-size: 40rpx;
+  margin:5% 8%;
+  text-align:left;
+} */
+.option-hover {
+  /* background: rgba(147, 173, 169, 0.2);
+  background: #DFEDDC; */
+  background: rgba(223, 237, 220, 0.5);
+  
+}
+
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-15%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    30% {
+        transform: translateX(-6px)
+    }
+
+    60% {
+        transform: translateX(4px)
+    }
+
+    90% {
+        transform: translateX(-1px)
+    }
+}
+
+/* 进度条 */
+.cu-progress {
+  
+  overflow: hidden;
+  height: 4%;
+  /* background-color: rgba(217, 168, 123, 0.63); */
+  background-color: rgba(121, 201, 185, 0.849);
+  /* background-color: rgba(203, 160, 170, 0.678); */
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  /* border-radius: 6rpx; */
+}
+
+.cu-progress view {
+  width: 0;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-items: flex-end;
+  justify-content: space-around;
+  font-size: 30rpx;
+  color: #fff;
+  transition: width 0.6s ease;
+}
+
+.cu-progress.striped view {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 72rpx 72rpx;
+}
+
+.cu-progress.active view {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  from {
+    background-position: 72rpx 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+.progress-bg {
+  /* background-color: #D29964; */
+  background-color: #61bfad;
+  /* background-color: #CBA0AA; */
+}

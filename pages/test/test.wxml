@@ -1,0 +1,111 @@
+<!--pages/test/test.wxml-->
+<view class="wrapper">
+  <!-- 进度条 -->
+  <view class="cu-progress striped active">
+    <view class="progress-bg"style="width:{{(perScore)*(index+1)}}%;">{{index+1}}/{{question.length}}</view>
+  </view>
+
+  <!-- 问题块 -->
+  <!-- 文字题 -->
+  <view wx:if="{{question[index]['isImageQuestion'] == '0'}}" class='wrapper-up'>
+    <!-- 问题题目 -->
+    <view class='question-title'>{{index+1}}、{{question[index]['questionContent']}}</view>
+     <!-- 倒计时 -->
+    <view class='countdown'>
+      <image src='/images/avatar/clock-white.png' />
+      <text style='color:{{current_time <= 60000?"red":"white"}};'>{{clock}}</text>
+    </view>
+  </view>
+  <!-- 图片提 -->
+  <view wx:else class='wrapper-up-img'>
+    <image style="width:100%;" mode="widthFix" src="{{question[index]['questionContent']}}"/>
+    <view class='countdown-img'>
+      <image src='/images/avatar/clock-black.png' />
+      <text style='color:{{current_time <= 60000?"red":"black"}};'>{{clock}}</text>
+    </view>
+  </view>
+
+  <!-- 问题选项 -->
+  <scroll-view
+    class='wrapper-down'
+    scroll-y
+    enable-back-to-top='true' 
+  >
+    <!-- A -->
+    <!-- 文字题 -->
+    <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+      <button class='question-option' bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][0]]}}" style="animation-name:{{animationname}};" hover-class='option-hover'>
+        <text>(A)  {{question[index][thisOptions[index][0]]}}</text>
+      </button>
+    </view>
+    <!-- 图片提 -->
+    <view wx:else>
+      <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][0]]}}">(A)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][0]]}}" bindload='getWidth'></image></view>
+    </view>
+    <!-- B -->
+    <!-- 文字题 -->
+    <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+      <button class='question-option' catchtap='handleClickOption' data-pick="{{question[index][thisOptions[index][1]]}}" style="animation-name:{{animationname}}; animation-delay: 0.1s;" hover-class='option-hover'>
+        <text>(B)  {{question[index][thisOptions[index][1]]}}</text>
+      </button>
+    </view>
+    <!-- 图片提 -->
+    <view wx:else>
+      <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][1]]}}">(B)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][1]]}}" bindload='getWidth' ></image></view>
+    </view>
+    <!-- C -->
+    <view wx:if="{{thisOptions[index].length >= 3}}">
+      <!-- 文字题 -->
+      <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class='question-option' catchtap='handleClickOption' data-pick="{{question[index][thisOptions[index][2]]}}" style="animation-name:{{animationname}}; animation-delay: 0.2s;" hover-class='option-hover'>
+          <text>(C)  {{question[index][thisOptions[index][2]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][2]]}}">(C)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][2]]}}" bindload='getWidth' ></image></view>
+      </view>
+    </view>
+    <!-- D -->
+    <view wx:if="{{thisOptions[index].length >= 4}}">
+      <!-- 文字题 -->
+      <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class='question-option' catchtap='handleClickOption' data-pick="{{question[index][thisOptions[index][3]]}}" style="animation-name:{{animationname}}; animation-delay: 0.3s;" hover-class='option-hover'>
+          <text>(D)  {{question[index][thisOptions[index][3]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][3]]}}">(D)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][3]]}}" bindload='getWidth' ></image></view>
+      </view>
+    </view>
+    <!-- E -->
+    <view wx:if="{{thisOptions[index].length >= 5}}">
+      <!-- 文字题 -->
+      <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class='question-option' catchtap='handleClickOption' data-pick="{{question[index][thisOptions[index][4]]}}" style="animation-name:{{animationname}}; animation-delay: 0.4s;" hover-class='option-hover'>
+          <text>(E)  {{question[index][thisOptions[index][4]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][4]]}}">(E)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][4]]}}" bindload='getWidth' ></image></view>
+      </view>
+    </view>
+    <!-- F -->
+    <!-- 文字题 -->
+    <view wx:if="{{thisOptions[index].length >= 6}}">
+      <!-- 文字题 -->
+      <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class='question-option' catchtap='handleClickOption' data-pick="{{question[index][thisOptions[index][5]]}}" style="animation-name:{{animationname}}; animation-delay: 0.5s;" hover-class='option-hover'>
+          <text>(F)  {{question[index][thisOptions[index][5]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture" bindtap="handleClickOption" data-pick="{{question[index][thisOptions[index][5]]}}">(F)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][thisOptions[index][5]]}}" bindload='getWidth' ></image></view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

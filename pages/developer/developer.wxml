@@ -1,0 +1,26 @@
+<!--pages/developer.wxml-->
+<view>
+  <view>
+    <swiper autoplay="true" interval="2000" circular="true">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item style="background:url({{item}});background-repeat: no-repeat;background-size:100% 200px; ">
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="info-wrapper">
+    <view class="text">数学章节同步测试系统v1</view>
+    <view class="text">开发者信息</view>
+    <view class="text">教学班3_5组</view>
+    <view class="text">QQ:995253976</view>
+    <view class="text">公众号:gdufe1028</view>
+  </view>
+
+  <view class="end-two">
+      <image class="end">抱歉，暂不显示！</image>
+      <image class="end">抱歉，暂不显示！</image>
+  </view>
+
+  <view class="copyright">Copyright © 2019 教学班3_5组. All rights reserved.</view>
+</view>

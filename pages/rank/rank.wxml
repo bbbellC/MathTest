@@ -1,0 +1,62 @@
+<!--pages/rank/rank.wxml-->
+<view class='wrapper'>
+  <view class='btn-wrapper'>
+    <picker class='btn' mode='multiSelector' bindchange='termChange'  value='{{termIndex}}' range='{{termArray}}' >选择学期</picker>
+    <view class='text'>
+      排行榜
+    </view>
+    <picker class='btn' mode='multiSelector' bindchange='chapterChange' bindcolumnchange='partChange' value='{{chapterIndex}}' range='{{chapterArray}}' range-key="label">选择章节</picker>
+  </view>
+
+  <view wx:if="{{termIndex[0]!=0}}" class='text-wrapper'>
+    {{termArray[0][termIndex[0]]}}{{termArray[1][termIndex[1]]}}
+    <text>\n</text>
+    {{chapterArray[0][chapterIndex[0]].label}} | 
+    {{chapterArray[1][chapterIndex[1]].label}}
+  </view>
+
+  <view class='header-wrapper'>
+    <view wx:if="{{termIndex[0]==0}}" bindchange="" class="rankTitle1">
+      <view class="column">昵称</view>
+      <view class="column">总题数</view>
+      <view class="column">对题数</view>
+      <view class="column">平均用时</view>
+      <view class="column">正确率</view>
+    </view>
+    
+
+    <view wx:else class="rankTitle1">
+      <view class="column">昵称</view>
+      <view class="column">题数</view>
+      <view class="column">用时</view>
+      <view class="column">正确率</view>
+    </view>
+  </view>
+
+  
+  <scroll-view scroll-y="true" class='body-wrapper'>
+    <view wx:if="{{termIndex[0]==0}}" >
+      <view wx:for="{{list}}">
+        <view class='rankTitle2'>
+          <view class="column">{{item.realName}}</view>
+          <view class="column">{{item.allQuestionNum}}</view>
+          <view class="column">{{item.correctNum}}</view>
+          <view class='column'>{{item.allQuestionNum == '0' ? '0' : item.avg}}</view>
+          <view class="column">{{item.allQuestionNum == '0' ? '0' : item.right}}%</view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else>
+      <view wx:for="{{listc}}">
+        <view class='rankTitle2'>
+          <view class="column">{{item.user.realName}}</view>
+          <view class="column">{{item.questionNum}}</view>
+          <view class="column">{{item.answerUseTime}}</view>
+          <view class="column">{{item.allQuestionNum == '0' ? '0' : item.right}}%</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
+</view>

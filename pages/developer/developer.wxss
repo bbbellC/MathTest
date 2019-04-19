@@ -1,0 +1,43 @@
+/* pages/developer.wxss */
+.info-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text{
+  margin: 20rpx;
+}
+
+.end-two {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.end {
+  width:250rpx;
+  height:250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx;
+  border-radius: 30px;
+}
+
+.copyright{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35rpx;
+  font-size:28rpx;
+}

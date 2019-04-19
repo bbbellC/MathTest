@@ -1,0 +1,21 @@
+/* pages/situation/situation.wxss */
+.wrapper {
+   background: linear-gradient(180deg, #F9F7E8, #FFFDE7);
+}
+
+/* 上框 */
+.wrapper-up {
+  height: 20%;
+  background-color:#61bfad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12rpx;
+  margin: 3% 4%;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 8rpx 8rpx 20rpx rgba(97, 191, 174, 0.486);
+}

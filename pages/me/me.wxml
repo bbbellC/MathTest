@@ -1,0 +1,48 @@
+<!--pages/me/me.wxml-->
+<view>
+  <view class='wave-wrapper'>
+    <image class="gif-wave"mode="scaleToFill"src="https://image.weilanwl.com/gif/wave.gif"></image>
+  </view>
+
+  <view class="function-wrapper">
+    <view class="function-item"  catchtap='goToMy'> 
+      <view class='icon-text'>
+        <image src='/images/avatar/my.png' class='function-icon'></image><text>个人信息</text>
+      </view>
+      <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+    <view class="function-item" catchtap='goToWrongs'>
+      <view class='icon-text'>
+        <image src='/images/avatar/wrong.png' class='function-icon'></image><text>错题记录</text>
+      </view>
+      <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+    <view class="function-item" catchtap='goToExercise'>
+      <view class='icon-text'>
+        <image src='/images/avatar/record.png' class='function-icon'></image><text>练习记录</text>
+      </view>
+    <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+    <view class="function-item" catchtap='goToRank'>
+      <view class='icon-text'>
+        <image src='/images/avatar/rank.png' class='function-icon'></image><text>成绩排行</text>
+      </view>
+      <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+    <view class="function-item" catchtap='goToDev'>
+      <view class='icon-text'>
+        <image src='/images/avatar/us.png' class='function-icon'></image><text>关于我们</text>
+      </view>
+      <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+    <view class="function-item" catchtap='goToFeedback'>
+      <view class='icon-text'>
+        <image src='/images/avatar/feedback.png' class='function-icon'></image><text>用户反馈</text>
+      </view>
+      <image src='/images/avatar/arrow.png' class='right-arrow'></image>
+    </view>
+  </view>
+
+  <view class='wrapper-up'></view>
+
+</view>

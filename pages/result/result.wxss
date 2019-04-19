@@ -1,0 +1,160 @@
+/* pages/result/result.wxss */
+
+.wrapper {
+  background: linear-gradient(180deg, #F9F7E8, #FFFDE7);
+}
+
+/* 波浪框 */
+/* .wrapper-wave {
+  height: 8%;
+  background-color: #61BFAD;
+}
+.gif-wave {
+  position: absolute;
+  height: 8%; 
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;progress-bgprogress-bg3
+} */
+
+/* 上框 */
+.wrapper-up {
+  height: 30%;
+  color: #000;
+  /* background-color: #6180ac; */
+  /* background-color:#61bfad; */
+  background-color: #F9F7E8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* .wrapper-up text {
+  padding: 10rpx 0;
+  font-family: "Microsoft YaHei","Tahoma","Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+} */
+/* 横线 */
+.line {
+  width:45%;
+  height:1%;
+  background:#32685f;
+  opacity:.5;
+  margin-top:2%;
+}
+/* 等分文字 */
+.grid-text-wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.grid-text-wrapper view {
+  padding-top:30rpx;
+  padding-bottom: 20rpx;
+  width:25%;
+}
+.grid-text {
+  color:#313131;
+}
+
+
+
+/* 下框 */
+.wrapper-down {
+  height: 60%;
+  margin-top: 4%;
+}
+
+/* 所有题号框 */
+.question-wrapper {
+  display: flex;
+  flex-flow:wrap row;
+  justify-content: center;
+  overflow: hidden;
+}
+/* 题号框 */
+.question-container {
+  height: 60rpx;
+  width: 60rpx;
+  margin: 55rpx 40rpx; 
+  transition: opacity .2s ease-in;
+}
+/* 点击题号 */
+.question-hover {
+  opacity: 0;
+}
+/* 题号数字框 */
+.question-id {
+  position: absolute;
+  width: 60rpx;
+  text-align: center;
+  z-index: 1;
+  font-weight: bold;
+  /* color: #57749c; */
+  /* color: #407a70; */
+  color: #5F5F5F;
+}
+/* 题号圆框 */
+.circle-container {
+  height: 60rpx;
+  width: 60rpx;
+  /* animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) normal infinite; */
+  /* animation: rotate-circle 5s linear infinite; */
+  animation-name: rotate-circle; /*动画的名称 */
+  animation-duration: 5s; /*动画从开始到结束的时间*/
+  animation-timing-function: linear; /*动画执行快慢的参数*/
+  animation-iteration-count: infinite; /*动画执行多少次的参数*//*以下是兼容ios所需，参数意义与上相同*/
+  -webkit-animation-name: rotate-circle;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes rotate-circle {
+  0% {
+    
+  }
+  100% {
+    
+    transform:  rotate(360deg);
+  }
+}
+/*兼容ios*/
+@-webkit-keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 圆效果 */
+.circle {
+  background: #fff;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.75;
+  transform: translate(0, 0);
+  
+}
+.circle1 {
+  transform: translate(-18rpx, -25rpx);
+}
+.circle2 {
+  transform: translate(18rpx, -25rpx);
+}
+.circle3 {
+  transform: translate(-30rpx, 0);
+}
+.circle4 {
+  transform: translate(30rpx, 0);
+}
+.circle5 {
+  transform: translate(-18rpx, 25rpx);
+}
+.circle6 {
+  transform: translate(18rpx, 25rpx);
+}
+/* EOF圆效果 */
+

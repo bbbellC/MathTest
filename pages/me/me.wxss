@@ -1,0 +1,111 @@
+/* pages/me/me.wxss */
+
+/* wave框 */
+.wave-wrapper {
+  /* height: 20%; */
+  background: #61bfad;
+  background-size:cover;
+  padding-top:40rpx;
+  overflow:hidden;
+  position:relative;
+}
+.gif-wave{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}
+
+/* 等分框 */
+.grid-text-wrapper {
+  height:50%;
+  margin-top: 5%;
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.grid-text-wrapper view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0rpx 0rpx .1rpx rgb(130, 150, 146);
+  width:33.33%;
+  
+
+}
+.grid-text {
+  color:#313131;
+}
+
+
+/* 功能框 */
+.function-wrapper {
+  height: 70%;
+  margin-bottom:50rpx;
+  margin-top:50rpx;
+  margin-left:30rpx;
+  margin-right:30rpx;
+  border-radius:20rpx;
+  overflow:hidden;
+  display:block;
+  box-shadow:0rpx 40rpx 100rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+.function-item {
+  transform:translateX(0rpx);
+  transition:all 0.6s ease-in-out 0s;
+  padding-right:90rpx;
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:100rpx;
+  background:#fff;
+  padding:0 30rpx;
+}
+.function-item::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.function-item:last-child::after {
+  border: none;
+}
+ 
+.icon-text {
+  min-height:100rpx;
+  width: 50%;
+  display: inline-flex;
+  align-items: center;
+}
+.icon-text text {
+  font-size: 35rpx;
+  margin-left: 5%;
+}
+.function-icon {
+  height: 42rpx;
+  width: 42rpx;
+  margin: 0 5%;
+}
+.right-arrow {
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.wrapper-up {
+  height: 90%;
+
+}
+

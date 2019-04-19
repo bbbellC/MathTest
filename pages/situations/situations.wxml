@@ -1,0 +1,114 @@
+<!--pages/situations/situations.wxml-->
+<view class="wrapper">
+  <view class='wrapper-question'>
+    <!-- 问题块 -->
+    <!-- 文字题 --> 
+    <view wx:if="{{question[index]['isImageQuestion'] == '0'}}" class='wrapper-up'>
+      <!-- 问题题目 -->
+      <view class='question-title'>{{index+1}}、{{question[index]['questionContent']}}</view>
+    </view>
+    <!-- 图片提 -->
+    <view wx:else class='wrapper-up-img'>
+      <image style="width:100%;" mode="widthFix" src="{{question[index]['questionContent']}}"/>
+    </view>
+
+    <!-- 问题选项 -->
+    <scroll-view
+      class='wrapper-down'
+      scroll-y
+      enable-back-to-top='true' 
+    >
+      <!-- A -->
+      <!-- 文字题 -->
+      <view wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class="question-option {{question[index][options[index][0]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][0]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}};">
+          <text>(A)  {{question[index][options[index][0]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture {{question[index][options[index][0]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][0]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(A)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][0]]}}" bindload='getWidth' ></image></view>
+      </view>
+
+      <!-- B -->
+      <!-- 文字题 -->
+      <view  wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+        <button class="question-option {{question[index][options[index][1]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][1]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}}; animation-delay: 0.1s;">
+          <text>(B)  {{question[index][options[index][1]]}}</text>
+        </button>
+      </view>
+      <!-- 图片提 -->
+      <view wx:else>
+        <view class="picture {{question[index][options[index][1]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][1]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(B)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][1]]}}" bindload='getWidth' ></image></view>
+      </view>
+
+      <!-- C -->
+      <view wx:if="{{options[index].length >= 3}}">
+        <!-- 文字题 -->
+        <view  wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+          <button class="question-option {{question[index][options[index][2]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][2]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}}; animation-delay: 0.2s;">
+            <text>(C)  {{question[index][options[index][2]]}}</text>
+          </button>
+        </view>
+        <!-- 图片提 -->
+        <view wx:else>
+          <view class="picture {{question[index][options[index][2]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][2]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(C)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][2]]}}" bindload='getWidth' ></image></view>
+        </view>
+      </view>
+
+      <!-- D -->
+      <view wx:if="{{options[index].length >= 4}}">
+        <!-- 文字题 -->
+        <view  wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+          <button class="question-option {{question[index][options[index][3]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][3]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}}; animation-delay: 0.3s;">
+            <text>(D)  {{question[index][options[index][3]]}}</text>
+          </button>
+        </view>
+        <!-- 图片提 -->
+        <view wx:else>
+          <view class="picture {{question[index][options[index][3]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][3]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(D)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][3]]}}" bindload='getWidth' ></image></view>
+        </view>
+      </view>
+
+      <!-- E -->
+      <view wx:if="{{options[index].length >= 5}}">
+        <!-- 文字题 -->
+        <view  wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+          <button class="question-option {{question[index][options[index][4]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][4]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}}; animation-delay: 0.4s;">
+            <text>(E)  {{question[index][options[index][4]]}}</text>
+          </button>
+        </view>
+        <!-- 图片提 -->
+        <view wx:else>
+          <view class="picture {{question[index][options[index][4]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][4]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(E)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][4]]}}" bindload='getWidth' ></image></view>
+        </view>
+      </view>
+
+      <!-- F -->
+      <view wx:if="{{options[index].length >= 6}}">
+        <!-- 文字题 -->
+        <view  wx:if="{{question[index]['isImageQuestion'] == '0'}}">
+          <button class="question-option {{question[index][options[index][5]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][5]] == question[index]['selectedOption'] ? 'wrong' : ''}}" style="animation-name:{{animationname}}; animation-delay: 0.5s;">
+            <text>(F)  {{question[index][options[index][5]]}}</text>
+          </button>
+        </view>
+        <!-- 图片提 -->
+        <view wx:else>
+          <view class="picture {{question[index][options[index][5]] == question[index]['correctOption'] ? 'correct' : ''}} {{question[index][options[index][5]] == question[index]['selectedOption'] ? 'wrong' : ''}}">(F)<image style='width:{{wide}}rpx;' mode="widthFix" src="{{question[index][options[index][5]]}}" bindload='getWidth' ></image></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 下一题、上一题 -->
+  <view class='tabbar'>
+    <view class='tabbar-item' hover-class='tabbar-hover' bindtap='goToLast'>
+      <image src='/images/avatar/left-arrow.png'></image>{{index == 0 ? '返回' : '上一题'}}
+    </view>
+    <view class='tabbar-line'>|</view>
+    <view class='tabbar-item' hover-class='tabbar-hover' bindtap='goToNext'>
+      <image src='/images/avatar/right-arrow.png'></image>{{index+1 == length ? '返回' : '下一题'}}
+    </view>
+  </view>
+</view>
+
